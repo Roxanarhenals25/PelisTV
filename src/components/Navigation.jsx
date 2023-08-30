@@ -1,6 +1,10 @@
 import React, { useContext } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { PokemonContext } from '../context/PokemonContext';
+import { Carousel } from './Carousel';
+import pokemon1Image from '../assets/pokemon1.jpg';
+import pokemon2Image from '../assets/pokemon2.png';
+import portada2Image from '../assets/portada2.jpg';
 
 export const Navigation = () => {
 
@@ -56,7 +60,7 @@ return (
 					<button className='btn-search'>Buscar</button>
 				</form>
 			</header>
-
+			<Carousel/> 
 			<Outlet />
 		</>
 	);

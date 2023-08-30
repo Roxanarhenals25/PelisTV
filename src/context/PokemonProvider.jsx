@@ -116,7 +116,6 @@ export const PokemonProvider = ({ children }) => {
 		dark: false,
 		fairy: false,
 		unknow: false,
-		shadow: false,
 	});
 
 	const [filteredPokemons, setfilteredPokemons] = useState([]);
