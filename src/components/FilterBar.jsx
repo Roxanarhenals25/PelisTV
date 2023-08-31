@@ -1,13 +1,28 @@
-import React, { useContext } from 'react';
-import { PokemonContext } from '../context/PokemonContext';
+import React, { useContext, useRef, useEffect } from 'react';
+import { PokemonContext } from '../context/PokemonContext'
 
 export const FilterBar = () => {
-	const { active, handleCheckbox } = useContext(PokemonContext);
+
+	const { active, handleCheckbox, setActive } = useContext(PokemonContext);
+
+	const filterBarRef = useRef(null);
+
+	useEffect(() => {
+        function handleClickOutside(event) {
+            if (filterBarRef.current && !filterBarRef.current.contains(event.target)) {
+                setActive(false); 
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [setActive, filterBarRef]);
 
 	return (
-		<div className={`container-filters ${active ? 'active' : ''}`}>
+		<div className={`container-filters ${active ? 'active' : ''}`} ref={filterBarRef}>
 			<div className='filter-by-type'>
-				<span>Tipo</span>
+				<span>Filtrar por tipo</span>
 
 				<div className='group-type'>
 					<input
@@ -16,7 +31,7 @@ export const FilterBar = () => {
 						name='grass'
 						id='grass'
 					/>
-					<label htmlFor='grass'>Planta</label>
+					<label className='word-type' htmlFor='grass'>Planta</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -25,7 +40,7 @@ export const FilterBar = () => {
 						name='fire'
 						id='fire'
 					/>
-					<label htmlFor='fire'>Fuego</label>
+					<label className='word-type' htmlFor='fire'>Fuego</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -34,7 +49,7 @@ export const FilterBar = () => {
 						name='bug'
 						id='bug'
 					/>
-					<label htmlFor='bug'>Bicho</label>
+					<label className='word-type' htmlFor='bug'>Bicho</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -43,7 +58,7 @@ export const FilterBar = () => {
 						name='fairy'
 						id='fairy'
 					/>
-					<label htmlFor='fairy'>Hada</label>
+					<label className='word-type' htmlFor='fairy'>Hada</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -52,7 +67,7 @@ export const FilterBar = () => {
 						name='dragon'
 						id='dragon'
 					/>
-					<label htmlFor='dragon'>Dragón</label>
+					<label className='word-type' htmlFor='dragon'>Dragón</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -61,7 +76,7 @@ export const FilterBar = () => {
 						name='ghost'
 						id='ghost'
 					/>
-					<label htmlFor='ghost'>Fantasma</label>
+					<label className='word-type' htmlFor='ghost'>Fantasma</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -70,7 +85,7 @@ export const FilterBar = () => {
 						name='ground'
 						id='ground'
 					/>
-					<label htmlFor='ground'>Tierra</label>
+					<label className='word-type' htmlFor='ground'>Tierra</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -79,7 +94,7 @@ export const FilterBar = () => {
 						name='normal'
 						id='normal'
 					/>
-					<label htmlFor='normal'>Normal</label>
+					<label className='word-type' htmlFor='normal'>Normal</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -88,7 +103,7 @@ export const FilterBar = () => {
 						name='psychic'
 						id='psychic'
 					/>
-					<label htmlFor='psychic'>Psíquico</label>
+					<label className='word-type' htmlFor='psychic'>Psíquico</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -97,7 +112,7 @@ export const FilterBar = () => {
 						name='steel'
 						id='steel'
 					/>
-					<label htmlFor='steel'>Acero</label>
+					<label className='word-type' htmlFor='steel'>Acero</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -106,7 +121,7 @@ export const FilterBar = () => {
 						name='dark'
 						id='dark'
 					/>
-					<label htmlFor='dark'>Siniestro</label>
+					<label className='word-type' htmlFor='dark'>Siniestro</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -115,7 +130,7 @@ export const FilterBar = () => {
 						name='electric'
 						id='electric'
 					/>
-					<label htmlFor='electric'>Eléctrico</label>
+					<label className='word-type' htmlFor='electric'>Eléctrico</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -124,7 +139,7 @@ export const FilterBar = () => {
 						name='fighting'
 						id='fighting'
 					/>
-					<label htmlFor='fighting'>Lucha</label>
+					<label className='word-type' htmlFor='fighting'>Lucha</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -133,7 +148,7 @@ export const FilterBar = () => {
 						name='flying'
 						id='flying'
 					/>
-					<label htmlFor='flying'>Volador</label>
+					<label className='word-type' htmlFor='flying'>Volador</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -142,7 +157,7 @@ export const FilterBar = () => {
 						name='ice'
 						id='ice'
 					/>
-					<label htmlFor='ice'>Hielo</label>
+					<label className='word-type' htmlFor='ice'>Hielo</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -151,7 +166,7 @@ export const FilterBar = () => {
 						name='poison'
 						id='poison'
 					/>
-					<label htmlFor='poison'>Veneno</label>
+					<label className='word-type' htmlFor='poison'>Veneno</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -160,7 +175,7 @@ export const FilterBar = () => {
 						name='rock'
 						id='rock'
 					/>
-					<label htmlFor='rock'>Roca</label>
+					<label className='word-type' htmlFor='rock'>Roca</label>
 				</div>
 				<div className='group-type'>
 					<input
@@ -169,7 +184,7 @@ export const FilterBar = () => {
 						name='water'
 						id='water'
 					/>
-					<label htmlFor='water'>Agua</label>
+					<label className='word-type' htmlFor='water'>Agua</label>
 				</div>
 			</div>
 		</div>
