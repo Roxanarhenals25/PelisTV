@@ -415,125 +415,38 @@ header form {
 	color: #000;
 }
 
-@media (max-width: 851px) { 
-	.container {
-		max-width: 500px;
-		margin: 0 auto;
-	}
-	
-	header { 
-		padding: 10px 0;
-		display: block;
-	}
-	.logo img {
-		width: 150px;
-		margin-left: 30%;
-		margin-bottom: 15px;
-
-	}
-	.form-group {
-		display: flex;
-		align-items: center;
-		gap: 2px;
-		padding: 8px 8px;
-		border-radius: 20px;
-		margin-left: 20px;
-	}
-	.form-group input {
-		width: 200px;
-		font-size: 10px;
-	}
-	.btn-search {
-		font-weight: 10px;
-		padding: 8px 8px;
-		letter-spacing: 0;
-		border-radius: 20px;
-	}
-	.icon-filter .icon {
-		width: 20px;
-		height: 20px;
-	}
-	.menu-type{
-		font-size: 15px;
-	}
-	.card-list-pokemon {
-		display: grid;
-		gap: 20px;
-		grid-template-columns: repeat(1, 1fr);
-	}
-	.card-img img {
-		width: 50%;
-		height: 50%;
-	}
-	.card-img {
-		height: 150px;
-	}
-	.card-info {
-		padding: 5px;
-	}
-	.card-info h3 {
-		font-size: 20px;
-	}
-	.container-filters {
-		left: -200px;
-		width: 150px;
-	}
-	.filter-by-type span {
-		font-size: 15px;
-		margin-bottom: 10px;
-	}
-	.filter-by-type {
-		gap: 0;
-	}
-	.word-type {
-		margin-top: 8px;
-		font-size: 15px;
-	}
-	.number-pokemon {
-		top: -45px;
-		font-size: 50px;
-	}
-	.header-main-pokemon {
-		margin-top: 20px;
-		display: grid;
-	}
-	.container-img-pokemon img {
-		height: 80%;
-	}
-	.container-img-pokemon {
-		padding: 10px;
-		height: 200px;
-		width: 300px;
-		margin-left: 30px;
-	}
-	.info-pokemon {
-		display: flex;
-		justify-content: space-around;
-		margin-top: 20px;
-	}
-	.container-info-pokemon h1 {
-		font-size: 30px;
-		margin-right: 100px;
-	}
-	.container-stats {
-		display: grid;
-	}
-	.card-types {
-		margin-left: 99px;
-	}
-	.container-stats {
-		gap: 0;
-		margin-bottom: 20px;
-	}
-	.progress-bar {
-		width: 50%;
-		height: 20px;
-	}
-	.stat-group span {
-		font-weight: 400;
-		font-size: 15px;
-	}
-	.h1, h1 {
-		font-size: 1.8rem;
-	}
+@media (max-width: 851px) {
+    .container {
+        max-width: 500px;
+        margin: auto;
+    }
+    header { padding: 10px 0; display: block; }
+    .logo img { width: 150px; margin: 0 30% 15px; }
+    .form-group {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        padding: 8px;
+        border-radius: 20px;
+        margin-left: 20px;
+    }
+    .form-group input { width: 200px; font-size: 10px; }
+    .btn-search { font-weight: 10px; padding: 8px; border-radius: 20px; }
+    .icon-filter .icon, .card-img img { width: 70px; height: 70px; }
+    .menu-type, .filter-by-type span, .word-type, .stat-group span { font-size: 15px; }
+    .card-list-pokemon { display: grid; gap: 20px; grid-template-columns: 1fr; }
+    .card-img { height: 150px; }
+    .card-info h3 { font-size: 20px; padding: 5px; }
+    .container-filters { left: -200px; width: 150px; }
+    .filter-by-type { gap: 0; }
+    .number-pokemon { top: -45px; font-size: 50px; }
+    .header-main-pokemon { margin-top: 20px; display: grid; }
+    .container-img-pokemon { padding: 10px; height: 200px; width: 300px; margin-left: 30px; }
+    .container-img-pokemon img { height: 80%; }
+    .info-pokemon { display: flex; justify-content: space-around; margin-top: 20px; }
+    .container-info-pokemon h1 { font-size: 30px; margin-right: 100px; }
+    .container-stats { display: grid; gap: 0; margin-bottom: 20px; }
+    .card-types { margin-left: 99px; }
+    .progress-bar { width: 50%; height: 20px; }
+    .h1, h1 { font-size: 1.8rem; }
 }
